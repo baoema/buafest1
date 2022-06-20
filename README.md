@@ -2,6 +2,8 @@
 
 Se realiza el siguiente ejercicio de automatizacion con los siguientes pasos a completar.
 
+## User Stories
+
 * Ir a la web: https://www.demoblaze.com/index.html
 * Dar de alta un usuario.
 * Login y logout con el usuario dado de alta.
