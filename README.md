@@ -37,4 +37,4 @@ Se realiza el siguiente ejercicio de automatizacion con los siguientes pasos a c
 `npx cypress open`
 * Seleccionar** E2E Testing** clic en **Configured**.
 * Seleccionar **Chrome** y clic en **Start E2E Testing in Chrome**.
-* Para correr la prueba hacer clic en **Trying.feature**
+* Para ejecutar prueba hacer clic en **Trying.feature**
