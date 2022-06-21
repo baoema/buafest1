@@ -1,4 +1,4 @@
-Feature: Open Web, Login User, Logout User and search notebbok and add to cart
+Feature: FEATURE: Open Web, Login User, Logout User and search notebbok and add to cart
 
     Scenario: Open Web
         Given A user open the home page
