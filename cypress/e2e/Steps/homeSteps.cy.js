@@ -2,6 +2,10 @@
 
 import {Given, When, And, Then} from "cypress-cucumber-preprocessor/steps"
 
+//----------------------
+
+//------------------------
+
 Given('A user open the home page',()=>{
     cy.visit('https://www.demoblaze.com/index.html')
 });
@@ -13,11 +17,27 @@ Then('Verify Page',()=>{
 When('A new user registers', () => {
     cy.get('#signin2').click() 
     cy.get('#signInModal > .modal-dialog > .modal-content > .modal-header').should('be.visible') 
-    cy.get('#sign-username').clear().type('March20')
-    cy.get('#sign-username').then($username=>{
+    //----- prueba
+    
+    cy.get('#sign-username').clear().type(userID_Alpha_Numeric())      
+
+    function userID_Alpha_Numeric() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 10; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+      cy.log(text)
+      
+    return text;
+    
+    }
+   
+    /**cy.get('#sign-username').then($username=>{
         const smallModalText = $username.text();
         cy.log(smallModalText)
-    })
+    })*/
+    
     cy.get('#sign-password').type('ciro3030')
     cy.get('#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()   
 });
@@ -27,7 +47,12 @@ When('A user opens the login page',()=>{
     cy.get('#login2').click()
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-header').should('be.visible')
     cy.get('#loginusername').clear()
-    cy.get('#sign-username').invoke('text').as('InvokeText')
+    
+    
+    
+    
+    cy.get('#sign-username').invoke('text').as('text')
+    
     cy.get('#loginpassword').type('ciro3030')
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
 });
