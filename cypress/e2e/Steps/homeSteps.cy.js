@@ -21,6 +21,7 @@ When('A new user registers', () => {
     cy.get('#signin2').click() 
     cy.get('#signInModal > .modal-dialog > .modal-content > .modal-header').should('be.visible') 
    
+    
     cy.get('#sign-username').clear().type(userID_Alpha_Numeric())      
      
     function userID_Alpha_Numeric() {
@@ -46,7 +47,7 @@ When('A new user registers', () => {
     
 });
 
-//--------------------------------------------Log In - Loguearse
+//--------------------------------------------Log In - Loguearse ----------
 When('A user opens the login page',()=>{
     cy.log(text)    
     cy.get('#login2').click()
